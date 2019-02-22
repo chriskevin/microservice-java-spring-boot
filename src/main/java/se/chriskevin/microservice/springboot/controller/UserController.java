@@ -52,7 +52,7 @@ public class UserController {
     }
   )
   public ResponseEntity<User> getUser(final @ApiParam(value = "A UUID") @PathVariable UUID id) {
-    final ApiError apiError =
+    final var apiError =
         new ApiError(
             Collections.emptyList(),
             "No user with ID" + id,
@@ -101,7 +101,7 @@ public class UserController {
       @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
     }
   )
-  @PutMapping(value = "/users/{id}")
+  @PutMapping(value = "/users/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<User> updateUser(
       final @ApiParam(value = "A UUID") @PathVariable UUID id,
       final @RequestBody WritableUserDetails userDetails) {

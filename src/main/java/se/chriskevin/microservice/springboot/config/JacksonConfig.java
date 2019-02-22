@@ -1,7 +1,10 @@
 package se.chriskevin.microservice.springboot.config;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import io.vavr.jackson.datatype.VavrModule;
 import java.util.Arrays;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +19,13 @@ public class JacksonConfig {
   @Primary
   public Jackson2ObjectMapperBuilder objectMapperBuilder() {
     return new Jackson2ObjectMapperBuilder()
-        .modules(Arrays.asList(new Jdk8Module(), new JavaTimeModule(), new VavrModule()));
+        .modules(
+            Arrays.asList(
+                new Jdk8Module(),
+                new JavaTimeModule(),
+                new ParameterNamesModule(),
+                new VavrModule()))
+        .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
+        .visibility(PropertyAccessor.CREATOR, JsonAutoDetect.Visibility.ANY);
   }
 }

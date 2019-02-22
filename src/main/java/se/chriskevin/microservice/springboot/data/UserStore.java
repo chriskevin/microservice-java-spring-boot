@@ -26,13 +26,13 @@ public class UserStore {
   }
 
   public Option<User> removeUser(final UUID uuid) {
-    final Option<User> user = getUser(uuid);
+    final var user = getUser(uuid);
     this.users = user.map(x -> this.users.remove(x)).getOrElse(this.users);
     return user;
   }
 
   public Option<User> updateUser(final UUID uuid, final User updatedUser) {
-    final Option<User> user = getUser(uuid);
+    final var user = getUser(uuid);
     this.users = user.map(x -> this.users.replace(x, updatedUser)).getOrElse(this.users);
     return user;
   }

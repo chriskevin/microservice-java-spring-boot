@@ -22,7 +22,7 @@ public class User {
   @NonNull
   private final UUID id;
 
-  @NonNull
   @ApiModelProperty(value = "Alias for the users real name")
+  @NonNull
   private final String username;
 }
