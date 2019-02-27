@@ -8,16 +8,18 @@ Feature: Scenarios for creating, reading, updating and deleting users
     And response body should match
 
     """
-    [
-      {
-        "id": "8390159a-87b3-4364-9202-8d0cd73ee06b",
-        "username": "Chris"
-      },
-      {
-        "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
-        "username": "Kevin"
-      }
-    ]
+    {
+      "users": [
+        {
+          "id": "8390159a-87b3-4364-9202-8d0cd73ee06b",
+          "name": "Chris"
+        },
+        {
+          "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
+          "name": "Kevin"
+        }
+      ]
+    }
     """
 
   Scenario: Read a specific user
@@ -29,7 +31,11 @@ Feature: Scenarios for creating, reading, updating and deleting users
 
     """
     {
-      "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
-      "username": "Kevin"
+      "users": [
+        {
+          "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
+          "name": "Kevin"
+        }
+      ]
     }
     """

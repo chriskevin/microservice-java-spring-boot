@@ -28,7 +28,7 @@ public final class UserStepDefs implements En {
           RestAssured.basePath = path;
         });
 
-    When("^GET request is sent$", () -> response = given().when().get());
+    When("^GET request is sent$", () -> response = given().contentType("application/json").get());
 
     Then(
         "^response status should be <(" + REGEX_HTTP_STATUS_CODE + ")>",
