@@ -333,7 +333,7 @@
                                 <plugin>
                                     <name>junit</name>
                                     <extension>xml</extension>
-                                    <outputDirectory>${project.build.directory}/sure-fire</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/surefire-reports</outputDirectory>
                                 </plugin>
                             </plugins>
                         </configuration>
