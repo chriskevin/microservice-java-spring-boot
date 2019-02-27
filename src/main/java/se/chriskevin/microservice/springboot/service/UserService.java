@@ -11,9 +11,9 @@ import se.chriskevin.microservice.springboot.model.WritableUserDetails;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public final class UserService {
 
-  private UserStore userStore;
+  private final UserStore userStore;
 
   public List<User> getUsers() {
     return userStore.getUsers();
