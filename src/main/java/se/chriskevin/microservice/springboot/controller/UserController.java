@@ -26,9 +26,9 @@ import se.chriskevin.microservice.springboot.service.UserService;
 
 @RestController
 @AllArgsConstructor
-public class UserController {
+public final class UserController {
 
-  private UserService userService;
+  private final UserService userService;
 
   @GetMapping(value = "/users")
   @ApiOperation(value = "Fetches all users")

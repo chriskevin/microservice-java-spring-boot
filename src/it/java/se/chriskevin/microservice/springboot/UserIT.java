@@ -1,4 +1,3 @@
 package se.chriskevin.microservice.springboot;
 
-public class UserIT {
-}
+public class UserIT {}
