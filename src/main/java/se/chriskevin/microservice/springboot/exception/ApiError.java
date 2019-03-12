@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Getter
 @ToString
-public class ApiError {
+public final class ApiError {
 
   @ApiModelProperty(value = "A list of errors that occurred")
   @NonNull

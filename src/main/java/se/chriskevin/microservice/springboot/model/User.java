@@ -1,5 +1,6 @@
 package se.chriskevin.microservice.springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -17,10 +18,11 @@ import lombok.experimental.Wither;
 public class User {
 
   @ApiModelProperty(value = "UUID that identifies a unique user")
+  @JsonProperty(access = JsonProperty.Access.READ_ONLY)
   @NonNull
   private final UUID id;
 
-  @NonNull
   @ApiModelProperty(value = "Alias for the users real name")
+  @NonNull
   private final String username;
 }
