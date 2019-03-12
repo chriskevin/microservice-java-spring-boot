@@ -16,10 +16,10 @@ before_script:
 script:
   - "mvn clean verify"
   - "mvn sonar:sonar \
-    -Dsonar.projectKey=SigmaITC_competencebyjava-microservice-springboot \
-    -Dsonar.organization=sigmaitc \
-    -Dsonar.host.url=https://sonarcloud.io \
-    -Dsonar.login=f03165acb9d276c38277a7ed1fdb7d07ab27581c"
+       -Dsonar.projectKey=se.chriskevin.se:microservice-spring-boot \
+       -Dsonar.organization=chriskevin-github \
+       -Dsonar.host.url=https://sonarcloud.io \
+       -Dsonar.login=57bdffa6e9c96a19fbef0f32e41141bbbe4e6f07"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
