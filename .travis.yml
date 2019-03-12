@@ -6,6 +6,7 @@ jdk:
 env:
   global:
     - CC_TEST_REPORTER_ID=ca0ba65a28462ab9f9218e560fe6a04ddd0745712f31cc8de6fb2c3eed2ffa1e
+    - JACOCO_SOURCE_PATH=src/main/java
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -16,4 +17,5 @@ script: "mvn clean verify"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter format-coverage target/site/jacoco/jacoco.xml --input-type jacoco
+  - ./cc-test-reporter upload-coverage
