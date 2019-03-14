@@ -25,6 +25,7 @@ public class JacksonConfig {
                 new JavaTimeModule(),
                 new ParameterNamesModule(),
                 new VavrModule()))
+        .indentOutput(true)
         .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
         .visibility(PropertyAccessor.CREATOR, JsonAutoDetect.Visibility.ANY);
   }

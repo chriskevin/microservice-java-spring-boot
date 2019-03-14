@@ -10,26 +10,26 @@ Feature: Scenarios for creating, reading, updating and deleting users
     """
     [
       {
-        "id": "8390159a-87b3-4364-9202-8d0cd73ee06b",
-        "username": "Chris"
+        "id": 1,
+        "name": "Chris"
       },
       {
-        "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
-        "username": "Kevin"
+        "id": 2,
+        "name": "Kevin"
       }
     ]
     """
 
   Scenario: Read a specific user
 
-    Given REST URL <"/users/c95dc295-1aa7-4ec2-8007-afee43b31b16">
+    Given REST URL <"/users/2">
     When GET request is sent
     Then response status should be <200>
     And response body should match
 
     """
     {
-      "id": "c95dc295-1aa7-4ec2-8007-afee43b31b16",
-      "username": "Kevin"
+      "id": 2,
+      "name": "Kevin"
     }
     """
