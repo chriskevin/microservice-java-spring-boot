@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 import se.chriskevin.microservice.springboot.model.User;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Component
 @NoArgsConstructor
 @Getter
 public class UserStore {
 
+  private AtomicInteger index = new AtomicInteger();
   private List<User> users = List.of(new User(1, "Chris"), new User(2, "Kevin"));
 
   public Option<User> getUser(final Integer id) {
