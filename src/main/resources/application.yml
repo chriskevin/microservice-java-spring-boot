@@ -3,7 +3,7 @@ spring:
   application:
     name: spring-boot-example
   main:
-    banner-mode: off
+    banner-mode: 'off'
   messages:
     encoding: UTF-8
   profiles:

@@ -2,12 +2,11 @@ package se.chriskevin.microservice.springboot.data;
 
 import io.vavr.collection.List;
 import io.vavr.control.Option;
+import java.util.concurrent.atomic.AtomicInteger;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 import se.chriskevin.microservice.springboot.model.User;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 @NoArgsConstructor
