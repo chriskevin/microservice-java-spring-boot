@@ -1,0 +1,57 @@
+## Spring
+spring:
+  application:
+    name: spring-boot-example
+  main:
+    banner-mode: off
+  messages:
+    encoding: UTF-8
+  profiles:
+    active: dev
+
+  ## Database Settings
+  datasource:
+    url: jdbc:h2:file:./target/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    #url: jdbc:postgresql://localhost:5432/testdb
+    #platform: postgres
+    #username: user12
+    #password: s$cret
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    ## Hibernate Settings
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+
+  ## H2 Settings
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+
+# Logging
+logging:
+  level:
+    debug: DEBUG
+
+## Tomcat configuration
+server:
+  tomcat:
+    basedir: logs
+    accesslog:
+      directory:
+      prefix: access
+      file-date-format:
+      enabled: true
+      pattern: '%t %a "%r" %s (%D ms)'
