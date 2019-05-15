@@ -48,6 +48,7 @@
         <!-- Build plugins versions -->
         <build-helper-plugin.version>3.0.0</build-helper-plugin.version>
         <cucumber-jvm-parallel-plugin.version>5.0.0</cucumber-jvm-parallel-plugin.version>
+        <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <failsafe.version>3.0.0-M3</failsafe.version>
         <flyway-plugin.version>5.2.4</flyway-plugin.version>
         <jacoco-plugin.version>0.8.3</jacoco-plugin.version>
@@ -433,6 +434,27 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile-maven.version}</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>chrisxkevin/microservice-java-spring-boot</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
 
             <!-- Static Analysis -->

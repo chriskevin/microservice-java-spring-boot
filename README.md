@@ -23,3 +23,11 @@ Note: Remember to check that your IDE is using language level 11 as well (Projec
 * Run mutation tests `mvn pitest:mutationCoverage`
 * Format code `mvn spotless:apply`
 * Start microservice `mvn spring-boot:run`
+
+Note: Maven wrapper is included in project so all mvn commands can be called using `./mvnw` instead.
+
+## Docker
+The Maven build lifecyle creates a Docker image with the service by utilizing [dockerfile-maven-plugin](https://github.com/spotify/dockerfile-maven).
+
+* Build image `mvn package` or `mvn dockerfile:build`
+* Run service in container `docker run -p 8080:8080 -t chrisxkevin/microservice-java-spring-boot`
