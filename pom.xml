@@ -28,6 +28,7 @@
         <lombok.version>1.18.8</lombok.version>
         <postgresql.version>42.2.5</postgresql.version>
         <speedment.version>3.1.13</speedment.version>
+        <spring-cloud.version>2.1.1.RELEASE</spring-cloud.version>
         <springfox.version>2.9.2</springfox.version>
         <vavr.version>0.10.0</vavr.version>
 
@@ -47,7 +48,6 @@
 
         <!-- Build plugins versions -->
         <build-helper-plugin.version>3.0.0</build-helper-plugin.version>
-        <cucumber-jvm-parallel-plugin.version>5.0.0</cucumber-jvm-parallel-plugin.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <failsafe.version>3.0.0-M3</failsafe.version>
         <flyway-plugin.version>5.2.4</flyway-plugin.version>
@@ -137,6 +137,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>${spring-cloud.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox.version}</version>
@@ -158,11 +163,22 @@
             <groupId>au.com.dius</groupId>
             <artifactId>pact-jvm-consumer-junit5_2.12</artifactId>
             <version>${pact.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>om.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>au.com.dius</groupId>
             <artifactId>pact-jvm-consumer-java8_2.12</artifactId>
             <version>${pact.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.spotbugs</groupId>
@@ -190,6 +206,12 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
@@ -389,21 +411,6 @@
                             <goal>repackage</goal>
                         </goals>
                     </execution>
-                    <execution>
-                        <id>pre-integration-test</id>
-                        <configuration>
-                            <jvmArguments>-Dspring.profiles.active=integration-test</jvmArguments>
-                        </configuration>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-integration-test</id>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -487,47 +494,6 @@
             </plugin>
 
             <!-- Testing -->
-            <plugin>
-                <groupId>com.github.temyers</groupId>
-                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-                <version>${cucumber-jvm-parallel-plugin.version}</version>
-                <configuration>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>generateRunners</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>generateRunners</goal>
-                        </goals>
-                        <configuration>
-                            <glue>
-                                <package>se.chriskevin.microservice.springboot</package>
-                            </glue>
-                            <outputDirectory>target/generated-test-sources/cucumber</outputDirectory>
-                            <featuresDirectory>src/it/resources/</featuresDirectory>
-                            <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-                            <!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per scenario.  FEATURE generates a runner per feature. -->
-                            <parallelScheme>FEATURE</parallelScheme>
-                            <plugins>
-                                <plugin>
-                                    <name>pretty</name>
-                                </plugin>
-                                <plugin>
-                                    <name>json</name>
-                                    <extension>json</extension>
-                                    <outputDirectory>${project.build.directory}/cucumber_report</outputDirectory>
-                                </plugin>
-                                <plugin>
-                                    <name>junit</name>
-                                    <extension>xml</extension>
-                                    <outputDirectory>${project.build.directory}/surefire-reports</outputDirectory>
-                                </plugin>
-                            </plugins>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>

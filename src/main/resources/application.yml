@@ -25,6 +25,7 @@ spring:
     ## Hibernate Settings
     hibernate:
       ddl-auto: update
+    open-in-view: false
     properties:
       hibernate:
         show_sql: false
@@ -39,11 +40,6 @@ spring:
       settings:
         trace: false
         web-allow-others: false
-
-# Logging
-logging:
-  level:
-    debug: DEBUG
 
 ## Tomcat configuration
 server:

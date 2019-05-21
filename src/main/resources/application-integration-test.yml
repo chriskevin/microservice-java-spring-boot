@@ -1,0 +1,18 @@
+## Spring
+spring:
+  jmx:
+    enabled: false
+  main:
+    lazy-initialization: true
+
+  ## Database Settings
+  datasource:
+    url: jdbc:h2:file:./target/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+logging:
+  level:
+    root: WARN

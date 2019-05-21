@@ -1,0 +1,9 @@
+## Spring
+spring:
+  main:
+    lazy-initialization: true
+
+# Logging
+logging:
+  level:
+    root: WARN
