@@ -12,7 +12,7 @@ ENV JAVA_MINIMAL=/opt/jre
 RUN jlink \
     --verbose \
     --add-modules \
-        java.base,java.sql,java.naming,java.desktop,java.management,java.security.jgss,java.instrument \
+        java.base,java.logging,java.xml,jdk.unsupported,java.sql,java.naming,java.desktop,java.management,java.security.jgss,java.instrument,jdk.management \
         # java.naming - javax/naming/NamingException
         # java.desktop - java/beans/PropertyEditorSupport
         # java.management - javax/management/MBeanServer
