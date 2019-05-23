@@ -32,8 +32,11 @@ ENV JAVA_MINIMAL=/opt/jre
 ENV PATH="$PATH:$JAVA_MINIMAL/bin"
 
 COPY --from=packager "$JAVA_MINIMAL" "$JAVA_MINIMAL"
-COPY "target/microservice-spring-boot.jar" "/app.jar"
+
+ARG DEPENDENCY=target/dependency
+COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY ${DEPENDENCY}/META-INF /app/META-INF
+COPY ${DEPENDENCY}/BOOT-INF/classes /app
 
 EXPOSE 8080
-CMD [ "-jar", "/app.jar" ]
-ENTRYPOINT [ "java" ]
+ENTRYPOINT ["java","-cp","app:app/lib/*","se.chriskevin.microservice.springboot.Application"]
