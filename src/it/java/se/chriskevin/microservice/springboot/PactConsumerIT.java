@@ -8,7 +8,7 @@ import au.com.dius.pact.consumer.dsl.PactDslJsonBody;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
 import au.com.dius.pact.consumer.junit5.PactTestFor;
-import au.com.dius.pact.model.RequestResponsePact;
+import au.com.dius.pact.core.model.RequestResponsePact;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

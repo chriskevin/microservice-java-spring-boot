@@ -40,7 +40,7 @@
         <junit-jupiter.version>5.5.0-M1</junit-jupiter.version>
         <junit-platform.version>1.5.0-M1</junit-platform.version>
         <mockito.version>2.28.2</mockito.version>
-        <pact.version>3.6.7</pact.version>
+        <pact.version>4.0.0-beta.2</pact.version>
         <pitest.version>1.4.7</pitest.version>
         <rest-assured.version>4.0.0</rest-assured.version>
         <wiremock.version>2.23.2</wiremock.version>
@@ -162,7 +162,7 @@
         <!-- Test -->
         <dependency>
             <groupId>au.com.dius</groupId>
-            <artifactId>pact-jvm-consumer-junit5_2.12</artifactId>
+            <artifactId>pact-jvm-consumer-junit5</artifactId>
             <version>${pact.version}</version>
             <exclusions>
                 <exclusion>
@@ -173,7 +173,7 @@
         </dependency>
         <dependency>
             <groupId>au.com.dius</groupId>
-            <artifactId>pact-jvm-consumer-java8_2.12</artifactId>
+            <artifactId>pact-jvm-consumer-java8</artifactId>
             <version>${pact.version}</version>
         </dependency>
         <dependency>
