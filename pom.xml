@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
+        <version>2.2.6.RELEASE</version>
     </parent>
 
     <properties>
@@ -23,14 +23,14 @@
 
         <!-- Dependencies versions -->
         <apache-commons.version>3.9</apache-commons.version>
-        <hazelcast.version>3.12.2</hazelcast.version>
-        <hibernate.version>5.4.4.Final</hibernate.version>
-        <lombok.version>1.18.8</lombok.version>
-        <postgresql.version>42.2.6</postgresql.version>
-        <speedment.version>3.1.17</speedment.version>
-        <spring-cloud.version>2.1.2.RELEASE</spring-cloud.version>
+        <hazelcast.version>4.0</hazelcast.version>
+        <hibernate.version>5.4.12.Final</hibernate.version>
+        <lombok.version>1.18.12</lombok.version>
+        <postgresql.version>42.2.11</postgresql.version>
+        <speedment.version>3.2.7</speedment.version>
+        <spring-cloud.version>2.2.2.RELEASE</spring-cloud.version>
         <springfox.version>2.9.2</springfox.version>
-        <vavr.version>0.10.0</vavr.version>
+        <vavr.version>0.10.2</vavr.version>
 
         <!-- Test dependencies versions -->
         <assertj.version>3.15.0</assertj.version>

@@ -4,14 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.*;
 import lombok.*;
-import lombok.experimental.Wither;
 
 @Entity
 @Table(name = "user")
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
 @Getter
-@Wither
+@With
 @EqualsAndHashCode
 @ToString
 public class User {
