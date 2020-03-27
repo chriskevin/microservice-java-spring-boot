@@ -14,17 +14,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 @HoverflyCore(
-  mode = HoverflyMode.CAPTURE,
-  config = @HoverflyConfig(adminPort = 9000, proxyPort = 9001)
-)
+    mode = HoverflyMode.CAPTURE,
+    config = @HoverflyConfig(adminPort = 9000, proxyPort = 9001))
 @HoverflySimulate(
-  source =
-      @HoverflySimulate.Source(
-        value = "target/resources/test/hoverfly/missing-simulation.json",
-        type = HoverflySimulate.SourceType.FILE
-      ),
-  enableAutoCapture = true
-)
+    source =
+        @HoverflySimulate.Source(
+            value = "target/resources/test/hoverfly/missing-simulation.json",
+            type = HoverflySimulate.SourceType.FILE),
+    enableAutoCapture = true)
 @ExtendWith(HoverflyExtension.class)
 class HoverflyIT {
 

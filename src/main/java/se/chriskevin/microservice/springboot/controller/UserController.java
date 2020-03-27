@@ -29,11 +29,10 @@ public final class UserController {
   @GetMapping(value = "/users")
   @ApiOperation(value = "Fetches all users")
   @ApiResponses(
-    value = {
-      @ApiResponse(code = 404, message = "No users exist", response = ApiError.class),
-      @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
-    }
-  )
+      value = {
+        @ApiResponse(code = 404, message = "No users exist", response = ApiError.class),
+        @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
+      })
   public ResponseEntity<List<User>> getUsers() {
     return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
   }
@@ -41,12 +40,14 @@ public final class UserController {
   @GetMapping(value = "/users/{id}")
   @ApiOperation(value = "Fetches a specific user")
   @ApiResponses(
-    value = {
-      @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
-      @ApiResponse(code = 404, message = "No user found with given ID", response = ApiError.class),
-      @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
-    }
-  )
+      value = {
+        @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
+        @ApiResponse(
+            code = 404,
+            message = "No user found with given ID",
+            response = ApiError.class),
+        @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
+      })
   public ResponseEntity<User> getUser(final @ApiParam(value = "An ID") @PathVariable Integer id) {
     return userService
         .getUser(id)
@@ -56,12 +57,14 @@ public final class UserController {
 
   @ApiOperation(value = "Deletes a specific user")
   @ApiResponses(
-    value = {
-      @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
-      @ApiResponse(code = 404, message = "No user found with given ID", response = ApiError.class),
-      @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
-    }
-  )
+      value = {
+        @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
+        @ApiResponse(
+            code = 404,
+            message = "No user found with given ID",
+            response = ApiError.class),
+        @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
+      })
   @DeleteMapping(value = "/users/{id}")
   public ResponseEntity deleteUser(final @ApiParam(value = "An ID") @PathVariable Integer id) {
     return userService
@@ -72,11 +75,10 @@ public final class UserController {
 
   @ApiOperation(value = "Adds a new user")
   @ApiResponses(
-    value = {
-      @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
-      @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
-    }
-  )
+      value = {
+        @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
+        @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
+      })
   @PostMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<User> addUser(final @RequestBody User user) {
     return new ResponseEntity<>(userService.addUser(user), HttpStatus.OK);
@@ -84,12 +86,14 @@ public final class UserController {
 
   @ApiOperation(value = "Updates a specific user")
   @ApiResponses(
-    value = {
-      @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
-      @ApiResponse(code = 404, message = "No user found with given ID", response = ApiError.class),
-      @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
-    }
-  )
+      value = {
+        @ApiResponse(code = 400, message = "Invalid input", response = ApiError.class),
+        @ApiResponse(
+            code = 404,
+            message = "No user found with given ID",
+            response = ApiError.class),
+        @ApiResponse(code = 500, message = "Technical error", response = ApiError.class)
+      })
   @PutMapping(value = "/users/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<User> updateUser(
       final @ApiParam(value = "An ID") @PathVariable Integer id, final @RequestBody User user) {

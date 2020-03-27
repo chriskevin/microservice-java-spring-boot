@@ -10,9 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("integration-test")
 @SpringBootTest(
-  classes = Application.class,
-  webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT
-)
+    classes = Application.class,
+    webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SpringBootIntegrationTestBase {
   @Autowired protected TestRestTemplate restTemplate;
 
