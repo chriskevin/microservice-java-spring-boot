@@ -47,16 +47,16 @@
         <wiremock-junit5.version>1.3.1</wiremock-junit5.version>
 
         <!-- Build plugins versions -->
-        <build-helper-plugin.version>3.0.0</build-helper-plugin.version>
-        <dockerfile-maven.version>1.4.12</dockerfile-maven.version>
-        <failsafe.version>3.0.0-M3</failsafe.version>
-        <flyway-plugin.version>6.0.0</flyway-plugin.version>
-        <jacoco-plugin.version>0.8.4</jacoco-plugin.version>
+        <build-helper-plugin.version>3.1.0</build-helper-plugin.version>
+        <dockerfile-maven.version>1.4.13</dockerfile-maven.version>
+        <failsafe.version>3.0.0-M4</failsafe.version>
+        <flyway-plugin.version>6.3.2</flyway-plugin.version>
+        <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
         <java.version>11</java.version>
         <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
-        <spotbugs.version>3.1.12</spotbugs.version>
-        <spotless.version>1.22.0</spotless.version>
-        <surefire.version>3.0.0-M3</surefire.version>
+        <spotbugs.version>4.0.1</spotbugs.version>
+        <spotless.version>1.28.0</spotless.version>
+        <surefire.version>3.0.0-M4</surefire.version>
     </properties>
 
     <dependencies>
