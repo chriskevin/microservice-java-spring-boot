@@ -3,17 +3,18 @@ package se.chriskevin.microservice.springboot;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 import au.com.dius.pact.consumer.MockServer;
-import au.com.dius.pact.consumer.Pact;
 import au.com.dius.pact.consumer.dsl.PactDslJsonBody;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
 import au.com.dius.pact.consumer.junit5.PactTestFor;
 import au.com.dius.pact.core.model.RequestResponsePact;
+import au.com.dius.pact.core.model.annotations.Pact;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.http.client.fluent.Request;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -47,6 +48,7 @@ class PactConsumerIT {
         .toPact();
   }
 
+  @Disabled
   @Test
   void testArticles(final MockServer mockServer) throws IOException {
     final var httpResponse =

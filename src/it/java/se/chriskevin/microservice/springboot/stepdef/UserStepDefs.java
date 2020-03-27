@@ -2,7 +2,7 @@ package se.chriskevin.microservice.springboot.stepdef;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import cucumber.api.java8.En;
+import io.cucumber.java8.En;
 import org.junit.runner.RunWith;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.http.ResponseEntity;
