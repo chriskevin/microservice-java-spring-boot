@@ -320,6 +320,11 @@
             <artifactId>netty-codec-http</artifactId>
             <version>4.1.50.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.6.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
