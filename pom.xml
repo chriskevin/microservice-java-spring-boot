@@ -50,12 +50,12 @@
         <build-helper-plugin.version>3.1.0</build-helper-plugin.version>
         <dockerfile-maven.version>1.4.13</dockerfile-maven.version>
         <failsafe.version>3.0.0-M4</failsafe.version>
-        <flyway-plugin.version>6.3.2</flyway-plugin.version>
+        <flyway-plugin.version>6.4.3</flyway-plugin.version>
         <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
         <java.version>11</java.version>
         <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
         <spotbugs.version>4.0.1</spotbugs.version>
-        <spotless.version>1.28.0</spotless.version>
+        <spotless.version>1.31.2</spotless.version>
         <surefire.version>3.0.0-M4</surefire.version>
     </properties>
 
