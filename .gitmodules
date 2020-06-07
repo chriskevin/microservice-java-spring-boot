@@ -1,4 +1,4 @@
 [submodule ".devcontainer"]
 	path = .devcontainer
-	url = git@github.com:chriskevin/devcontainer-java.git
+	url = https://github.com/chriskevin/devcontainer-java.git
 	branch = java-11
