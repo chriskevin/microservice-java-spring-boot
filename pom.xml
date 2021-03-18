@@ -29,7 +29,7 @@
         <postgresql.version>42.2.13</postgresql.version>
         <speedment.version>3.2.9</speedment.version>
         <spring-cloud.version>2.2.3.RELEASE</spring-cloud.version>
-        <springfox.version>2.9.2</springfox.version>
+        <springfox.version>2.10.0</springfox.version>
         <vavr.version>0.10.2</vavr.version>
 
         <!-- Test dependencies versions -->
