@@ -26,7 +26,7 @@
         <hazelcast.version>4.0.1</hazelcast.version>
         <hibernate.version>5.4.18.Final</hibernate.version>
         <lombok.version>1.18.12</lombok.version>
-        <postgresql.version>42.2.13</postgresql.version>
+        <postgresql.version>42.4.1</postgresql.version>
         <speedment.version>3.2.9</speedment.version>
         <spring-cloud.version>2.2.3.RELEASE</spring-cloud.version>
         <springfox.version>2.9.2</springfox.version>
